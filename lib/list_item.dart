@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 
 class ListItem extends StatelessWidget {
-  const ListItem({Key key}) : super(key: key);
+  final Map<String, String> pelicula;
+  ListItem({Key key, @required this.pelicula}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -15,7 +16,7 @@ class ListItem extends StatelessWidget {
             children: [
               Positioned.fill(
                 child: Image.network(
-                  "https://i.imgur.com/tpHc9cS.jpg",
+                  "${pelicula["image"]}",
                   fit: BoxFit.fill,
                 ),
               ),
@@ -33,8 +34,19 @@ class ListItem extends StatelessWidget {
                   child: Column(
                     mainAxisSize: MainAxisSize.min,
                     children: [
-                      Text("Titulo"),
-                      Text("Ranking"),
+                      Text(
+                        "Titulo: ${pelicula["title"]}",
+                        style: TextStyle(
+                          color: Colors.grey[200],
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      Text(
+                        "${pelicula["description"]}",
+                        style: TextStyle(
+                          color: Colors.grey[200],
+                        ),
+                      ),
                     ],
                   ),
                 ),

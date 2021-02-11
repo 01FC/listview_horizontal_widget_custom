@@ -11,4 +11,6 @@ Recuerda que despues de clonar el proyecto, abrir una terminal dentro de la carp
 ```sh
 flutter packages get
 ``` 
+<img src="screenshot/Capture0.PNG" width="240" height="480" />
+
 

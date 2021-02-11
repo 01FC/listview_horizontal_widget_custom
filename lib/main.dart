@@ -71,7 +71,7 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Lista de personas'),
+        title: Text('Lista de Peliculas'),
       ),
       body: Stack(
         children: [
@@ -85,18 +85,22 @@ class _HomePageState extends State<HomePage> {
                 child: Text(
                   "Seleccione pelicula favorita",
                   textAlign: TextAlign.center,
+                  style: TextStyle(
+                    color: Colors.grey[200],
+                    fontSize: 24,
+                    fontWeight: FontWeight.w900,
+                  ),
                 ),
               ),
               Container(
                 height: MediaQuery.of(context).size.height / 4,
-                color: Colors.red,
                 child: ListView.builder(
                   scrollDirection: Axis.horizontal,
                   itemCount: _listElements.length,
                   itemBuilder: (BuildContext context, int index) {
                     return GestureDetector(
                       onTap: () => _showSelectionDialog(context),
-                      child: ListItem(),
+                      child: ListItem(pelicula: _listElements[index]),
                     );
                   },
                 ),
